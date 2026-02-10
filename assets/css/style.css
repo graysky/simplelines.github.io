@@ -7,160 +7,40 @@
 }
 
 :root {
-  --neon-pink: #ff2d78;
-  --neon-blue: #00d4ff;
-  --neon-purple: #b537f2;
-  --dark-bg: #06060e;
-  --dark-surface: #0d0d1a;
+  --bg: #1a1a1a;
+  --text: #e0e0e0;
+  --text-muted: #666;
 }
 
 body {
-  background: var(--dark-bg);
-  color: #fff;
-  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
-/* Animated background grid */
-.bg-grid {
-  position: fixed;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 45, 120, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 45, 120, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Gradient orbs */
-.orb {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(120px);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.orb--pink {
-  width: 500px;
-  height: 500px;
-  background: rgba(255, 45, 120, 0.15);
-  top: -10%;
-  right: -5%;
-  animation: float-orb 8s ease-in-out infinite;
-}
-
-.orb--blue {
-  width: 400px;
-  height: 400px;
-  background: rgba(0, 212, 255, 0.1);
-  bottom: -10%;
-  left: -5%;
-  animation: float-orb 10s ease-in-out infinite reverse;
-}
-
-.orb--purple {
-  width: 300px;
-  height: 300px;
-  background: rgba(181, 55, 242, 0.08);
-  top: 40%;
-  left: 50%;
-  animation: float-orb 12s ease-in-out infinite;
-}
-
-@keyframes float-orb {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(30px, -40px) scale(1.1); }
-}
-
-/* Main content */
 .landing {
-  position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  text-align: center;
   padding: 2rem;
 }
 
-/* Korean accent text */
-.landing__kr {
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 300;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  letter-spacing: 0.5em;
-  color: var(--neon-pink);
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: fade-up 1s ease forwards 0.2s;
-}
-
-/* Company name */
 .landing__title {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 900;
-  font-size: clamp(3rem, 10vw, 7rem);
-  line-height: 1;
-  letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #fff 0%, var(--neon-pink) 50%, var(--neon-blue) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 0;
-  animation: fade-up 1s ease forwards 0.4s;
-}
-
-/* Divider line */
-.landing__line {
-  width: 80px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
-  margin: 2rem 0;
-  opacity: 0;
-  animation: fade-up 1s ease forwards 0.6s;
-}
-
-/* Tagline */
-.landing__tagline {
+  font-family: 'JetBrains Mono', monospace;
   font-weight: 300;
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
-  letter-spacing: 0.3em;
-  color: rgba(255, 255, 255, 0.6);
-  opacity: 0;
-  animation: fade-up 1s ease forwards 0.8s;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  letter-spacing: 0.08em;
+  color: var(--text);
 }
 
-/* Bottom accent */
-.landing__footer {
-  position: absolute;
-  bottom: 2rem;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.4em;
-  color: rgba(255, 255, 255, 0.15);
-  opacity: 0;
-  animation: fade-up 1s ease forwards 1.2s;
-}
-
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Hover glow on title */
-.landing__title:hover {
-  filter: drop-shadow(0 0 40px rgba(255, 45, 120, 0.3));
-  transition: filter 0.5s ease;
+.landing__tagline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  margin-top: 1rem;
 }
