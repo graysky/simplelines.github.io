@@ -1,0 +1,10 @@
+title: Simplelines
+description: Software, simplified.
+url: "https://simplelines.co"
+baseurl: ""
+
+theme: minima
+
+# Build settings
+markdown: kramdown
+permalink: pretty
