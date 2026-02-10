@@ -36,11 +36,8 @@ body {
   color: var(--text);
 }
 
-.landing__tagline {
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
-  font-size: clamp(0.85rem, 1.5vw, 1rem);
-  letter-spacing: 0.15em;
-  color: var(--text-muted);
-  margin-top: 1rem;
+.logo {
+  width: 120px;
+  height: auto;
+  margin-top: 0.6rem;
 }
